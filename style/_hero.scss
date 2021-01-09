@@ -1,0 +1,161 @@
+.main-head {
+  min-height: 10vh;
+  padding: 1rem 0rem;
+  width: 80%;
+  margin: auto;
+  @include flex(space-between, center, row);
+  nav {
+    flex: 1;
+    .nav-links.active {
+      transform: translateX(0%);
+    }
+    ul {
+      transition: transform 400ms ease-in;
+      @include flex(space-between, center, row);
+    }
+  }
+  #logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    img {
+      margin-right: 1rem;
+      height: 30px;
+    }
+  }
+}
+#hero {
+  position: relative;
+  min-height: 90vh;
+  width: 100%;
+  @include flex(center, center, row);
+  .hero-container {
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    @include flex(space-between, center, row);
+    .hero-text {
+      margin-right: 3rem;
+      flex: 1 1 20rem;
+      h2,
+      h3 {
+        margin-bottom: 2rem;
+      }
+    }
+    .hero-image {
+      @include flex(center, center, row);
+      flex: 1 1 20rem;
+
+      svg {
+        margin: left;
+        width: 80%;
+      }
+    }
+  }
+  span {
+    background-color: rgba(0, 166, 232, 0.301);
+  }
+}
+.squared-paper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+#button1 {
+  padding: 0.8rem;
+  color: rgb(236, 236, 236);
+  border: 2px solid $dark-gray;
+  &:hover {
+    background: rgb(226, 226, 226);
+    border: 2px solid rgb(226, 226, 226);
+    color: rgb(59, 59, 59);
+  }
+}
+#button2 {
+  margin-left: 2rem;
+  padding: 0.8rem;
+  background: transparent;
+  border: 2px solid $dark-gray;
+  color: $dark-gray;
+  &:hover {
+    background: rgb(226, 226, 226);
+    border: 2px solid rgb(226, 226, 226);
+    color: rgb(59, 59, 59);
+  }
+}
+
+#gear1 {
+  position: absolute;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: spin-right 10s linear infinite;
+}
+#gear2 {
+  position: absolute;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: spin-left 10s linear infinite;
+}
+#character {
+  position: absolute;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+// Animations keyframes
+
+@keyframes spin-right {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes spin-left {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(-360deg);
+  }
+}
+@keyframes fadeIn-toUp {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.hero-anim {
+  animation: fadeIn-toUp 0.6s forwards ease-in;
+}
+
+// Burger menu
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: $dark-gray;
+  margin: 5px;
+  border-radius: 10px;
+}
+.burger {
+  display: none;
+  div {
+    transition: all 0.3s ease;
+  }
+}
+
+.toggle.line1 {
+  transform: translateY(8px) rotate(45deg);
+}
+.toggle.line2 {
+  opacity: 0;
+}
+.toggle.line3 {
+  transform: translateY(-8px) rotate(-45deg);
+}

@@ -1,0 +1,196 @@
+// Variables
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+html.active {
+  overflow: hidden;
+}
+
+$dark-gray: rgb(22, 22, 22);
+$gray: rgb(87, 87, 87);
+$main-blue: #00a8e8;
+$light-blue: #ade8ff;
+
+// Mixins
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@import "global";
+@import "hero";
+@import "portfolio";
+@import "me";
+@import "perks";
+@import "contact";
+
+//MEDIA QUERIES
+$breakpoint-bigtablet: 1024px;
+@media (max-width: $breakpoint-bigtablet) {
+  h1 {
+    font-size: 1rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  button {
+    width: 8rem;
+  }
+  .me-container {
+    width: 80%;
+  }
+}
+$breakpoint-tablet: 880px;
+@media (max-width: $breakpoint-tablet) {
+  .main-head {
+    #logo {
+      flex: 5;
+    }
+    .nav-links {
+      z-index: 1;
+      position: fixed;
+      transform: translateX(100%);
+      top: 10vh;
+      right: 0px;
+      height: 90vh;
+      background-color: white;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      li {
+        margin-bottom: 2rem;
+        opacity: 0;
+      }
+    }
+  }
+  #hero {
+    height: 90vh;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+
+    .hero-container {
+      .hero-image {
+        margin-top: 1rem;
+        order: 1;
+        svg {
+          transform: translateX(-10px);
+          margin: 0;
+          height: 25rem;
+          width: 100%;
+        }
+      }
+      .hero-text {
+        margin: 0rem;
+        text-align: center;
+        order: 2;
+        flex-wrap: nowrap;
+        button {
+          margin: 0rem 0rem 4rem 0rem;
+        }
+      }
+    }
+  }
+  #portfolio {
+    .portfolio-container {
+      width: 90%;
+      .portfolio-images {
+        justify-items: center;
+      }
+    }
+  }
+  .me-container {
+    flex-direction: column;
+    padding: 2rem 0rem;
+    width: 80%;
+    .title-container {
+      text-align: center;
+      span {
+        font-size: unset;
+      }
+    }
+    .text-container {
+      padding: unset;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  #perks {
+    .perk-container {
+      div {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+  #contact {
+    .contact-container {
+      width: 90%;
+      margin-bottom: 3rem;
+      .form-container {
+        margin: unset;
+      }
+    }
+  }
+  .burger {
+    display: block;
+  }
+}
+
+$breakpoint-mobile: 600px;
+@media (max-width: $breakpoint-mobile) {
+  #portfolio {
+    .portfolio-container {
+      height: 100%;
+      text-align: center;
+      .portfolio-images {
+        height: 0vh;
+        flex-direction: column;
+        align-items: center;
+        a img {
+          height: 80px;
+        }
+      }
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+}
+$breakpoint-xs: 360px;
+@media (max-width: $breakpoint-xs) {
+  .buttons {
+    a {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+  .title-container {
+    h2 {
+      margin-bottom: 2rem;
+    }
+  }
+}
+@keyframes linksFade {
+  from {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

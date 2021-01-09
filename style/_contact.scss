@@ -1,0 +1,58 @@
+#contact {
+  min-height: 70vh;
+  width: 100%;
+  @include flex(center, center, column);
+  .contact-container {
+    flex-wrap: wrap;
+    width: 60%;
+    margin: auto;
+    height: 100%;
+    @include flex(space-between, center, row);
+  }
+  button {
+    align-self: flex-end;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  p {
+    margin-bottom: 1rem;
+    color: $gray;
+  }
+}
+.form-container,
+.contact-text {
+  flex: 1 1 20rem;
+}
+.form-container {
+  margin-left: 2rem;
+  @include flex(center, center, column);
+  input,
+  textarea {
+    margin-bottom: 1rem;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 0.8rem 2rem;
+    border: none;
+    color: $gray;
+    font-size: 1rem;
+    resize: none;
+    &::placeholder {
+      font-size: 1rem;
+      color: rgb(179, 179, 179);
+    }
+    &:focus {
+      border: none;
+    }
+  }
+  form {
+    @include flex(center, center, column);
+    div {
+      @include flex(center, center, row);
+      :nth-child(1) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

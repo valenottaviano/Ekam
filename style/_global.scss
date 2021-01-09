@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+body,
+button,
+textarea {
+  font-family: "Nunito", sans-serif;
+}
+h2 {
+  font-family: "Libre Baskerville", serif;
+}
+a,
+li {
+  list-style-type: none;
+  text-decoration: none;
+  color: $dark-gray;
+}
+h1 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: $dark-gray;
+}
+h2 {
+  font-size: 2.3rem;
+  color: $dark-gray;
+}
+h3 {
+  font-size: 1.5rem;
+  color: $gray;
+  font-weight: 400;
+}
+h4,
+a,
+li,
+p {
+  font-size: 1.2rem;
+}
+img,
+svg,
+i,
+.hero-image {
+  pointer-events: none;
+}
+button {
+  width: 10rem;
+  padding: 1rem 2rem;
+  border: none;
+  background-color: $dark-gray;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.5s ease;
+  &:hover {
+    background-color: $gray;
+  }
+}
+
+// Aniamation classes
+.fade-in {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
+.fade-in.appear {
+  opacity: 1;
+}
+// Cool hover efect
