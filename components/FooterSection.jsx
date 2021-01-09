@@ -18,7 +18,7 @@ export default function FooterSection() {
                         <li>Nosotros</li>
                     </Link>
                     <Link href="/#portfolio">
-                        <li>Nosotros</li>
+                        <li>Clientes</li>
                     </Link>
                     <Link href="https://www.instagram.com/agencia.ekam/" target="_BLANK">
                         <li>Instagram</li>
