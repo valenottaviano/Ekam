@@ -1,5 +1,6 @@
 #portfolio {
   min-height: 60vh;
+  padding: 3rem 0rem;
   width: 100%;
   @include flex(center, center, column);
   background-color: $main-blue;
@@ -10,20 +11,23 @@
   width: 80%;
   margin: auto;
   h2 {
-    margin: 3rem 0rem 0rem 0rem;
+    margin: 3rem 0rem 3rem 0rem;
     color: white;
   }
   .portfolio-images {
     flex: 3;
     width: 100%;
+    flex-wrap: wrap;
     @include flex(center, space-around, row);
   }
   a {
     flex: 1 1 20rem;
     width: 50%;
+    margin: 2rem;
     @include flex(center, center, row);
-    img {
-      height: 100px;
-    }
-  }
+    img { 
+      height: 100px; 
+      width:100%;
+    } 
+  } 
 }
