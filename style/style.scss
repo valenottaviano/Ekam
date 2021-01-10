@@ -150,6 +150,7 @@ $breakpoint-tablet: 880px;
 $breakpoint-mobile: 600px;
 @media (max-width: $breakpoint-mobile) {
   #portfolio {
+    display: none;
     .portfolio-container {
       text-align: center;
       .portfolio-images {
