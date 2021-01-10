@@ -155,6 +155,12 @@ $breakpoint-mobile: 600px;
       .portfolio-images {
         align-items: center;
       }
+      a{
+        height: 100px;
+        img{
+          height:100%;
+        }
+      }
     }
   }
   .buttons {
